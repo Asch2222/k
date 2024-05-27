@@ -9,4 +9,20 @@
     <res-type>javax.sql.DataSource</res-type>
     <res-auth>Container</res-auth>
   </resource-ref>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Restricted Files</web-resource-name>
+            <url-pattern>/META-INF/*</url-pattern>
+            <url-pattern>/WEB-INF/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>*</role-name>
+        </auth-constraint>
+    </security-constraint>
 </web-app>
+<dependency>
+    <groupId>com.googlecode.owasp-java-html-sanitizer</groupId>
+    <artifactId>owasp-java-html-sanitizer</artifactId>
+    <version>20211018.1</version>
+</dependency>
+
